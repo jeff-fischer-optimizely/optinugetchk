@@ -1,0 +1,1904 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="8tlr92NpE51Kkn8Q7LrWRfaDZTqw7uRYKpVJitbzLwA" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-T8MLBF');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/nav.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.5/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/datatables.min.css" />
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.11.5/b-2.2.2/b-colvis-2.2.2/b-html5-2.2.2/datatables.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" integrity="sha256-9wRM03dUw6ABCs+AU69WbK33oktrlXamEXMvxUaF+KU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js" integrity="sha256-bu/BP02YMudBc96kI7yklc639Mu4iKGUNNcam8D2nLc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/jquery.rateit.min.js" integrity="sha256-I9babusfDLRKQ737s9uZMB/gZ7xMAtECgnhlrGPvRQ8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/clientresources/highlightjs/10.0.2/styles/vs2015.css">
+
+    <link rel="stylesheet" href="/minified/css/wip.min.css" />
+    <link rel="stylesheet" href="/minified/css/swagger.min.css" />
+    <link rel="stylesheet" href="/scripts/jquery/css/smoothness/jquery-ui-1.10.4.custom.css" />
+    
+    <script src="/clientresources/highlightjs/10.0.2/highlight.pack.js"></script>
+    <script src="/minified/js/scripts/Custom.min.js"></script>
+    <script src="https://cdn.optimizely.com/public/5935064/s/world.js"></script>
+    <script>
+!function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{src: "https://js.monitor.azure.com/scripts/b/ai.2.gbl.min.js", crossOrigin: "anonymous", cfg: {instrumentationKey: 'c906a8b8-709c-495a-960b-9b4a5a16d889', disableCookiesUsage: false }});
+</script>
+
+
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T8MLBF"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <a name="top"></a>
+    
+    
+
+
+<gen-search-widget configId="fb512777-8851-4d57-bfd5-bbd37933da61" triggerId="searchWidgetTrigger"></gen-search-widget>
+
+<style>
+    .world-oui-dropdown-children {
+        display: none;
+        z-index: 999;
+        position: absolute;        
+        margin-top: 2px;
+        margin-bottom: 2px;
+        border-radius: var(--border-radius);
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 3px;
+        inset: 0px auto auto 0px;
+        transform: translate3d(0px, 40px, 0px);
+    }
+
+    .show {
+        display: block;
+    }
+
+    .oui-dropdown__item{
+        margin-bottom: 0px !important;
+        padding: 0px !important;
+    }
+</style>
+
+<div id="main-header" class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 px-0">
+                <nav class="navbar navbar-expand-lg navbar-light" id="main-menu">
+                    <a class="navbar-brand py-2 pr-32 pl-0 " href="/">
+                                <img src="/globalassets/startpage/optimizely_logo_full-color_dark_trim.svg" alt="Optimizely Logo" />
+                    </a>
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span>
+                            <i class="fa fa-bars"></i>
+                        </span>
+                    </button>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                                <li class="d-none"></li>
+                                        <li class="nav-item dropdown">
+                                            <a class="opti-tertiary-fiord d-inline-block" href="/products/" target="">
+                                                Products
+                                                    <!-- Navigation button only displays when lv1 has lv2 children -->
+                                                    <span class="fa fa-angle-down lgScrCaret"></span>
+                                            </a>
+
+                                                    <span id="-1" class="fa fa-angle-down float-right smScrCaret px-3 py-3 clickable" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
+                                                    <ul class="dropdown-menu second" aria-labelledby="-1">
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/products/contentmarketing/overview/" target="">
+                                                                    Content Marketing Platform
+                                                                        <!-- Navigation button only displays on desktop when lv2 has lv3 children -->
+                                                                        <span class="fa fa-angle-right lgScrCaret" data-toggle="dropdown"></span>
+                                                                </a>
+                                                                        <ul class="dropdown-menu third">
+                                                                                <li class="nav-item"><a href="/products/contentmarketing/overview/" target="">Overview</a></li>
+                                                                                <li class="nav-item"><a href="/products/contentmarketing/features/" target="">Features</a></li>
+                                                                        </ul>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/products/cms/overview/" target="">
+                                                                    Content Management System
+                                                                        <!-- Navigation button only displays on desktop when lv2 has lv3 children -->
+                                                                        <span class="fa fa-angle-right lgScrCaret" data-toggle="dropdown"></span>
+                                                                </a>
+                                                                        <ul class="dropdown-menu third">
+                                                                                <li class="nav-item"><a href="/products/cms/overview/" target="">Overview</a></li>
+                                                                                <li class="nav-item"><a href="/products/cms/saas/" target="">SaaS CMS</a></li>
+                                                                        </ul>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://world.optimizely.com/products/#commerceconnect" target="">
+                                                                    Commerce Connect
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://world.optimizely.com/products/#configuredcommerce" target="">
+                                                                    Configured Commerce
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/products/web-experimentation/overview/" target="">
+                                                                    Web Experimentation
+                                                                        <!-- Navigation button only displays on desktop when lv2 has lv3 children -->
+                                                                        <span class="fa fa-angle-right lgScrCaret" data-toggle="dropdown"></span>
+                                                                </a>
+                                                                        <ul class="dropdown-menu third">
+                                                                                <li class="nav-item"><a href="/products/web-experimentation/overview/" target="">Overview</a></li>
+                                                                                <li class="nav-item"><a href="/products/web-experimentation/features/" target="">Features</a></li>
+                                                                        </ul>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/products/feature-experimentation/overview/" target="">
+                                                                    Feature Experimentation
+                                                                        <!-- Navigation button only displays on desktop when lv2 has lv3 children -->
+                                                                        <span class="fa fa-angle-right lgScrCaret" data-toggle="dropdown"></span>
+                                                                </a>
+                                                                        <ul class="dropdown-menu third">
+                                                                                <li class="nav-item"><a href="/products/feature-experimentation/overview/" target="">Overview</a></li>
+                                                                                <li class="nav-item"><a href="/products/feature-experimentation/features/" target="">Features</a></li>
+                                                                        </ul>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://world.optimizely.com/products/#odp" target="">
+                                                                    Data Platform
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/products/skillset/" target="">
+                                                                    Product skillset
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://www.optimizely.com/product-updates/" target="">
+                                                                    Product roadmap
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/products/product-migration/" target="">
+                                                                    Product migration
+                                                                </a>
+                                                            </li>
+                                                    </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="opti-tertiary-fiord d-inline-block" href="https://docs.developers.optimizely.com/" target="_blank">
+                                                Documentation
+                                                    <!-- Navigation button only displays when lv1 has lv2 children -->
+                                                    <span class="fa fa-angle-down lgScrCaret"></span>
+                                            </a>
+
+                                                    <span id="-1" class="fa fa-angle-down float-right smScrCaret px-3 py-3 clickable" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
+                                                    <ul class="dropdown-menu second" aria-labelledby="-1">
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://docs.developers.optimizely.com/" target="_blank">
+                                                                    Developer guides
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://support.optimizely.com/hc/en-us" target="_blank">
+                                                                    User guide
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/documentation/class-libraries/" target="">
+                                                                    APIs and libraries
+                                                                        <!-- Navigation button only displays on desktop when lv2 has lv3 children -->
+                                                                        <span class="fa fa-angle-right lgScrCaret" data-toggle="dropdown"></span>
+                                                                </a>
+                                                                        <ul class="dropdown-menu third">
+                                                                                <li class="nav-item"><a href="/documentation/class-libraries/cms/" target="">Content Management System</a></li>
+                                                                                <li class="nav-item"><a href="/documentation/class-libraries/commerce/" target="">Commerce Connect</a></li>
+                                                                                <li class="nav-item"><a href="/documentation/class-libraries/campaign/" target="">Campaign</a></li>
+                                                                                <li class="nav-item"><a href="/documentation/class-libraries/search-navigation/" target="">Search &amp; Navigation</a></li>
+                                                                                <li class="nav-item"><a href="/documentation/class-libraries/community-api/" target="">Community API</a></li>
+                                                                                <li class="nav-item"><a href="/documentation/class-libraries/rest-apis/" target="">REST APIs</a></li>
+                                                                        </ul>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://support.optimizely.com/hc/en-us/articles/11296547622669-Release-notes-by-product" target="_blank">
+                                                                    Releases
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://docs.developers.optimizely.com/content-cloud/v12.0.0-content-cloud/docs/upgrading-to-content-cloud-cms-12" target="_blank">
+                                                                    Upgrading
+                                                                        <!-- Navigation button only displays on desktop when lv2 has lv3 children -->
+                                                                        <span class="fa fa-angle-right lgScrCaret" data-toggle="dropdown"></span>
+                                                                </a>
+                                                                        <ul class="dropdown-menu third">
+                                                                                <li class="nav-item"><a href="https://docs.developers.optimizely.com/content-cloud/" target="_blank">Content Management System</a></li>
+                                                                                <li class="nav-item"><a href="https://docs.developers.optimizely.com/commerce" target="_blank">Commerce Connect</a></li>
+                                                                                <li class="nav-item"><a href="https://docs.developers.optimizely.com/digital-experience-platform/v1.1.0-search-and-navigation/docs" target="_blank">Search &amp; Navigation</a></li>
+                                                                                <li class="nav-item"><a href="https://docs.developers.optimizely.com/content-cloud/v1.2.0-forms/docs" target="_blank">Forms</a></li>
+                                                                                <li class="nav-item"><a href="https://docs.developers.optimizely.com/personalization/v1.1.0-personalization/docs" target="_blank">Personalization</a></li>
+                                                                                <li class="nav-item"><a href="https://docs.developers.optimizely.com/commerce/v1.3.0-service-api-developer-guide/docs" target="_blank">Service API</a></li>
+                                                                        </ul>
+                                                            </li>
+                                                    </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="opti-tertiary-fiord d-inline-block" href="/community/omvp/" target="">
+                                                OMVPs
+                                                    <!-- Navigation button only displays when lv1 has lv2 children -->
+                                                    <span class="fa fa-angle-down lgScrCaret"></span>
+                                            </a>
+
+                                                    <span id="-1" class="fa fa-angle-down float-right smScrCaret px-3 py-3 clickable" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
+                                                    <ul class="dropdown-menu second" aria-labelledby="-1">
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/community/omvp/become-a-member/" target="">
+                                                                    Become a member
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/community/omvp/benefits/" target="">
+                                                                    Benefits
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/community/omvp/events/" target="">
+                                                                    OMVP events
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/community/omvp/members/" target="">
+                                                                    OMVP members
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/community/omvp/application-and-nomination/" target="">
+                                                                    Application and nomination
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/community/omvp/badges/" target="">
+                                                                    Digital badges
+                                                                </a>
+                                                            </li>
+                                                    </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="opti-tertiary-fiord d-inline-block" href="/community/" target="">
+                                                Community
+                                                    <!-- Navigation button only displays when lv1 has lv2 children -->
+                                                    <span class="fa fa-angle-down lgScrCaret"></span>
+                                            </a>
+
+                                                    <span id="-1" class="fa fa-angle-down float-right smScrCaret px-3 py-3 clickable" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
+                                                    <ul class="dropdown-menu second" aria-labelledby="-1">
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://www.optimizely.com/local-dev-meetups/" target="_blank">
+                                                                    Events
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/community/updates/" target="">
+                                                                    Developer updates
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/community/optimizely-dev-happy-hours/happy-hour-us/" target="">
+                                                                    Happy hours
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/forum/" target="">
+                                                                    Forums
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/blogs/" target="">
+                                                                    Blogs
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://join.slack.com/t/optimizely-community/shared_invite/zt-2nkth5i5c-oFVarlrwAUyyQofKWDjsqw" target="_blank">
+                                                                    Slack
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://feedback.optimizely.com/" target="_blank">
+                                                                    Product feedback
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/community/community-recognition-program/" target="">
+                                                                    Community recognition program
+                                                                </a>
+                                                            </li>
+                                                    </ul>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="opti-tertiary-fiord d-inline-block" href="/" target="">
+                                                Resources
+                                                    <!-- Navigation button only displays when lv1 has lv2 children -->
+                                                    <span class="fa fa-angle-down lgScrCaret"></span>
+                                            </a>
+
+                                                    <span id="-1" class="fa fa-angle-down float-right smScrCaret px-3 py-3 clickable" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></span>
+                                                    <ul class="dropdown-menu second" aria-labelledby="-1">
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://nuget.optimizely.com/" target="_blank">
+                                                                    Optimizely Nuget feed
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/resources/net/" target="">
+                                                                    .NET
+                                                                        <!-- Navigation button only displays on desktop when lv2 has lv3 children -->
+                                                                        <span class="fa fa-angle-right lgScrCaret" data-toggle="dropdown"></span>
+                                                                </a>
+                                                                        <ul class="dropdown-menu third">
+                                                                                <li class="nav-item"><a href="/resources/net/about/" target="">About .NET</a></li>
+                                                                                <li class="nav-item"><a href="/resources/net/upgrading/" target="">Why upgrade?</a></li>
+                                                                        </ul>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="https://www.optimizely.com/support/education/" target="_blank">
+                                                                    Education
+                                                                        <!-- Navigation button only displays on desktop when lv2 has lv3 children -->
+                                                                        <span class="fa fa-angle-right lgScrCaret" data-toggle="dropdown"></span>
+                                                                </a>
+                                                                        <ul class="dropdown-menu third">
+                                                                                <li class="nav-item"><a href="https://academy.optimizely.com/student/catalog/list?category_ids=30769-live-training" target="_blank">Live Training</a></li>
+                                                                                <li class="nav-item"><a href="https://academy.optimizely.com/student/catalog/list?category_ids=32836-work-smarter-webinars" target="_blank">Work Smarter</a></li>
+                                                                                <li class="nav-item"><a href="https://academy.optimizely.com/student/catalog/list?category_ids=36095-masterclasses" target="_blank">Masterclasses</a></li>
+                                                                                <li class="nav-item"><a href="https://www.optimizely.com/support/education/certification/" target="_blank">Certification</a></li>
+                                                                                <li class="nav-item"><a href="/education/sme/" target="">SME program</a></li>
+                                                                        </ul>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/resources/videos/" target="">
+                                                                    Videos
+                                                                </a>
+                                                            </li>
+                                                            <li class="nav-item dropdown">
+                                                                <a href="/support/" target="">
+                                                                    Support
+                                                                </a>
+                                                            </li>
+                                                    </ul>
+                                        </li>
+                        </ul>
+                        <div class="form-inline" id="authen-items">
+<ul class="navbar-nav mr-auto">    
+    <li class="nav-item">
+        <a class="opti-tertiary-fiord" href="/WorldAccount/OptiIDLogIn/">Login</a>
+    </li>
+</ul>
+                        </div>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-11 col-md-10 col-sm-9 col-xs-8 col-6 px-0" id="main-search">
+<form action="/Search" class="form navbar-search" method="get">                    <input id="sectionFilter" type="hidden" name="sectionFilter" value="" />
+                    <label class="sr-only" for="inlineFormInputGroup">Search...</label>
+                    <div class="input-group mb-3" id="top-search">
+                        <div class="input-group-prepend">
+                            <button id="dd-filter" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class='fas fa-filter font-0875 color-666'></span>
+                                All Content
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item clickable">All Content</a>
+                                <a class="dropdown-item clickable">Documentation</a>
+                                <a class="dropdown-item clickable">Forums</a>
+                                <a class="dropdown-item clickable">User Guide</a>
+                                <a class="dropdown-item clickable">Support Help Center</a>
+                                <a class="dropdown-item clickable">Blogs</a>
+                                <a class="dropdown-item clickable">Releases</a>
+                                <a class="dropdown-item clickable">Bug List</a>
+                                <a class="dropdown-item clickable">Class libraries</a>
+                                <div role="separator" class="dropdown-divider"></div>
+                                <a class="dropdown-item clickable">People</a>
+                            </div>
+                        </div>
+                        <input type="text" name="searchQuery" class="form-control" id="inlineFormInputGroup" placeholder="Search World" style="background-color:#F5F3F1;border-color:#ddd" />
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" id="epi-search"><span class="fa fa-search"></span></button>
+                        </div>
+                    </div>
+</form>
+                <div class="newSearch">
+                    <input placeholder="Refine by search" id="searchWidgetTrigger" />
+                    <span class="fa fa-search"></span>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-2 col-sm-3 col-xs-4 col-6 px-0" id="search-toggle-container">
+                <span class="search-toggle"><span class="ai">AI On</span><span class="normal">AI Off</span></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- BreadCrumbs section -->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 font-1125 my-3" id="breadcrumbs">
+                <span><a href="/">Home</a> / </span>
+            </div>
+        </div>
+    </div>
+
+<script>
+    jQuery('#top-search a.dropdown-item').click(function (e) {
+        var curTxt = e.target.innerText;
+        jQuery('#dd-filter').html("<span class='fas fa-filter font-0875 color-666'></span> " + curTxt);
+        if (curTxt == 'All Content') {
+            jQuery('#inlineFormInputGroup').attr('placeholder', 'Search all types of content');
+        } else {
+
+            jQuery('#inlineFormInputGroup').attr('placeholder', 'Search in ' + e.target.innerText);
+        }
+        jQuery('#sectionFilter').val(e.target.innerText);
+    });
+    jQuery('#inlineFormInputGroup').keypress(function (e) {
+        if (e.which == 13) jQuery('#epi-search').click();
+    })
+    jQuery(function () {
+        jQuery("#inlineFormInputGroup").autocomplete({
+            source: function (request, response) {
+                jQuery.ajax({
+                    url: "/find_v2/_autocomplete?prefix=" + encodeURIComponent(request.term) + "&size=5",
+                    success: function (data) {
+                        response(jQuery.map(data.hits, function (item) {
+                            return {
+                                label: item.query,
+                                value: item.query
+                            };
+                        }));
+                    }
+                });
+            },
+            minLength: 2
+        });
+    });
+</script>
+
+
+    <div class="body-container">
+        
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+<form action="/ReleaseNotes" autocomplete="off" enctype="multipart/form-data" id="typeForm" method="post"><input data-val="true" data-val-required="The IsService field is required." id="IsService" name="IsService" type="hidden" value="False" />    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-3 leftNav font-0875 mb-3">
+                <!-- Main navigation -->
+                <div class="bg-epi-gray-box px-3 py-3">
+                    <div class="my-1 menuHeading">Products</div>
+                    <ul class="list-unstyled mb-1">
+                                <li>
+                                    <a class="" href="/ReleaseNotes?packageGroup=CMS">CMS</a>
+                                </li>
+                                <li>
+                                    <a class="" href="/ReleaseNotes?packageGroup=Commerce">Commerce</a>
+                                </li>
+                                <li>
+                                    <a class="" href="/ReleaseNotes?packageGroup=Find">Find</a>
+                                </li>
+                                <li>
+                                    <a class="" href="/ReleaseNotes?packageGroup=Personalization&amp;isService=False">Personalization</a>
+                                </li>
+                    </ul>
+
+                    <div class="my-1">
+                        <span class="menuHeading">Packages</span>
+                        <span class="clickable txt-epi-blue font-0875" id="expand" onclick="expandAll(this)">[expand]</span>
+                        <span class="clickable txt-epi-blue font-0875 d-none" id="collapse" onclick="collapseAll(this)">[collapse]</span>
+                    </div>
+
+                    <ul class="list-unstyled mb-1">
+                        <li>
+                            <a href="/ReleaseNotes">All</a>
+                        </li>
+                    </ul>
+
+                    <div id="collapse-dependentpackages">
+                        <ul class="list-unstyled mb-1">
+                                    <li class="text-truncate ">
+            <span class="">
+                    <span class="font-0875">Main packages</span>
+            </span>
+
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    ">
+                            <li class="text-truncate font-weight-bold">
+            <span class="ml-1">
+                    <a class="font-weight-bold font-0875"
+                       href="/documentation/Release-Notes/?packageFilter=EPiServer.CMS.Core"
+                       title="EPiServer.CMS.Core">
+                        EPiServer.CMS.Core
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.CMS.UI"
+                       title="EPiServer.CMS.UI">
+                        EPiServer.CMS.UI
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Commerce"
+                       title="EPiServer.Commerce">
+                        EPiServer.Commerce
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Find"
+                       title="EPiServer.Find">
+                        EPiServer.Find
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Social.Framework"
+                       title="EPiServer.Social.Framework">
+                        EPiServer.Social.Framework
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.ServiceApi"
+                       title="EPiServer.ServiceApi">
+                        EPiServer.ServiceApi
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Profiles.Client"
+                       title="EPiServer.Profiles.Client">
+                        EPiServer.Profiles.Client
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=Episerver.PaaS.EpiCloud"
+                       title="Episerver.PaaS.EpiCloud">
+                        Episerver.PaaS.EpiCloud
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+        <li class="text-truncate ">
+            <span class="">
+                    <span class="font-0875">Dependent packages</span>
+            </span>
+
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    ">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <span class="font-0875">CMS</span>
+            </span>
+
+                <i class="navigateItem fa fa-caret-right clickable" onclick="iconClick(this)"></i>
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    d-none navigationSubMenu">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer"
+                       title="EPiServer">
+                        EPiServer
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Amazon"
+                       title="EPiServer.Amazon">
+                        EPiServer.Amazon
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Azure"
+                       title="EPiServer.Azure">
+                        EPiServer.Azure
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.CMS"
+                       title="EPiServer.CMS">
+                        EPiServer.CMS
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.CMS.TinyMce"
+                       title="EPiServer.CMS.TinyMce">
+                        EPiServer.CMS.TinyMce
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.CMS.UI.Core"
+                       title="EPiServer.CMS.UI.Core">
+                        EPiServer.CMS.UI.Core
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.CommonFramework"
+                       title="EPiServer.CommonFramework">
+                        EPiServer.CommonFramework
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.DynamicContent"
+                       title="EPiServer.DynamicContent">
+                        EPiServer.DynamicContent
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Logging.Log4Net"
+                       title="EPiServer.Logging.Log4Net">
+                        EPiServer.Logging.Log4Net
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Packaging"
+                       title="EPiServer.Packaging">
+                        EPiServer.Packaging
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Packaging.UI"
+                       title="EPiServer.Packaging.UI">
+                        EPiServer.Packaging.UI
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Search"
+                       title="EPiServer.Search">
+                        EPiServer.Search
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.ServiceLocation.StructureMap"
+                       title="EPiServer.ServiceLocation.StructureMap">
+                        EPiServer.ServiceLocation.StructureMap
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <span class="font-0875">Find</span>
+            </span>
+
+                <i class="navigateItem fa fa-caret-right clickable" onclick="iconClick(this)"></i>
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    d-none navigationSubMenu">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Find.Commerce"
+                       title="EPiServer.Find.Commerce">
+                        EPiServer.Find.Commerce
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <span class="font-0875">Content Graph</span>
+            </span>
+
+                <i class="navigateItem fa fa-caret-right clickable" onclick="iconClick(this)"></i>
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    d-none navigationSubMenu">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=Optimizely.ContentGraph"
+                       title="Optimizely.ContentGraph">
+                        Optimizely.ContentGraph
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=Optimizely.ContentGraph.Core"
+                       title="Optimizely.ContentGraph.Core">
+                        Optimizely.ContentGraph.Core
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <span class="font-0875">Forms</span>
+            </span>
+
+                <i class="navigateItem fa fa-caret-right clickable" onclick="iconClick(this)"></i>
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    d-none navigationSubMenu">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Forms"
+                       title="EPiServer.Forms">
+                        EPiServer.Forms
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.XForms"
+                       title="EPiServer.XForms">
+                        EPiServer.XForms
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Forms.Samples"
+                       title="EPiServer.Forms.Samples">
+                        EPiServer.Forms.Samples
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Forms.ServiceApi"
+                       title="EPiServer.Forms.ServiceApi">
+                        EPiServer.Forms.ServiceApi
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <span class="font-0875">Analytics</span>
+            </span>
+
+                <i class="navigateItem fa fa-caret-right clickable" onclick="iconClick(this)"></i>
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    d-none navigationSubMenu">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.GoogleAnalytics"
+                       title="EPiServer.GoogleAnalytics">
+                        EPiServer.GoogleAnalytics
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.LiveMonitor"
+                       title="EPiServer.LiveMonitor">
+                        EPiServer.LiveMonitor
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <span class="font-0875">Content</span>
+            </span>
+
+                <i class="navigateItem fa fa-caret-right clickable" onclick="iconClick(this)"></i>
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    d-none navigationSubMenu">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.ChangeApproval"
+                       title="EPiServer.ChangeApproval">
+                        EPiServer.ChangeApproval
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.ContentCollaboration"
+                       title="EPiServer.ContentCollaboration">
+                        EPiServer.ContentCollaboration
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.ConnectForSharepoint"
+                       title="EPiServer.ConnectForSharepoint">
+                        EPiServer.ConnectForSharepoint
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.ContentDeliveryApi"
+                       title="EPiServer.ContentDeliveryApi">
+                        EPiServer.ContentDeliveryApi
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Labs.ContentManager"
+                       title="EPiServer.Labs.ContentManager">
+                        EPiServer.Labs.ContentManager
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.PdfPreview"
+                       title="EPiServer.PdfPreview">
+                        EPiServer.PdfPreview
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <span class="font-0875">Translation</span>
+            </span>
+
+                <i class="navigateItem fa fa-caret-right clickable" onclick="iconClick(this)"></i>
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    d-none navigationSubMenu">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Labs.LanguageManager"
+                       title="EPiServer.Labs.LanguageManager">
+                        EPiServer.Labs.LanguageManager
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <span class="font-0875">Social</span>
+            </span>
+
+                <i class="navigateItem fa fa-caret-right clickable" onclick="iconClick(this)"></i>
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    d-none navigationSubMenu">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.SocialReach"
+                       title="EPiServer.SocialReach">
+                        EPiServer.SocialReach
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.UGC"
+                       title="EPiServer.UGC">
+                        EPiServer.UGC
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Mail"
+                       title="EPiServer.Mail">
+                        EPiServer.Mail
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <span class="font-0875">Marketing</span>
+            </span>
+
+                <i class="navigateItem fa fa-caret-right clickable" onclick="iconClick(this)"></i>
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    d-none navigationSubMenu">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Marketing.Testing"
+                       title="EPiServer.Marketing.Testing">
+                        EPiServer.Marketing.Testing
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Marketing.Connector.XForms"
+                       title="EPiServer.Marketing.Connector.XForms">
+                        EPiServer.Marketing.Connector.XForms
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Campaign.Commerce"
+                       title="EPiServer.Campaign.Commerce">
+                        EPiServer.Campaign.Commerce
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Cms.Addons.Blocks"
+                       title="EPiServer.Cms.Addons.Blocks">
+                        EPiServer.Cms.Addons.Blocks
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.ConnectForMarketingAutomation"
+                       title="EPiServer.ConnectForMarketingAutomation">
+                        EPiServer.ConnectForMarketingAutomation
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Marketing.Automation.Forms"
+                       title="EPiServer.Marketing.Automation.Forms">
+                        EPiServer.Marketing.Automation.Forms
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.MarketingAutomationIntegration.Eloqua"
+                       title="EPiServer.MarketingAutomationIntegration.Eloqua">
+                        EPiServer.MarketingAutomationIntegration.Eloqua
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.MarketingAutomationIntegration.ExactTarget"
+                       title="EPiServer.MarketingAutomationIntegration.ExactTarget">
+                        EPiServer.MarketingAutomationIntegration.ExactTarget
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.MarketingAutomationIntegration.HubSpot"
+                       title="EPiServer.MarketingAutomationIntegration.HubSpot">
+                        EPiServer.MarketingAutomationIntegration.HubSpot
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.MarketingAutomationIntegration.Marketo"
+                       title="EPiServer.MarketingAutomationIntegration.Marketo">
+                        EPiServer.MarketingAutomationIntegration.Marketo
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.MarketingAutomationIntegration.MSDynamics"
+                       title="EPiServer.MarketingAutomationIntegration.MSDynamics">
+                        EPiServer.MarketingAutomationIntegration.MSDynamics
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.MarketingAutomationIntegration.Pardot"
+                       title="EPiServer.MarketingAutomationIntegration.Pardot">
+                        EPiServer.MarketingAutomationIntegration.Pardot
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.MarketingAutomationIntegration.Salesforce"
+                       title="EPiServer.MarketingAutomationIntegration.Salesforce">
+                        EPiServer.MarketingAutomationIntegration.Salesforce
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.MarketingAutomationIntegration.Silverpop"
+                       title="EPiServer.MarketingAutomationIntegration.Silverpop">
+                        EPiServer.MarketingAutomationIntegration.Silverpop
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.Cmo"
+                       title="EPiServer.Cmo">
+                        EPiServer.Cmo
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <span class="font-0875">Other</span>
+            </span>
+
+                <i class="navigateItem fa fa-caret-right clickable" onclick="iconClick(this)"></i>
+                <ul class="mt-2 pl-2 font-0875 list-unstyled
+                    d-none navigationSubMenu">
+                            <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=CmsVisualStudioExtension"
+                       title="CmsVisualStudioExtension">
+                        CmsVisualStudioExtension
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=PowerSlice"
+                       title="PowerSlice">
+                        PowerSlice
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=Quicksilver"
+                       title="Quicksilver">
+                        Quicksilver
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+        <li class="text-truncate ">
+            <span class="ml-1">
+                    <a href="/documentation/Release-Notes/?packageFilter=EPiServer.AvataxConnector"
+                       title="EPiServer.AvataxConnector">
+                        EPiServer.AvataxConnector
+                    </a>
+            </span>
+
+                <i class="navigateItem" onclick="iconClick(this)"></i>
+        </li>
+
+                </ul>
+        </li>
+
+                </ul>
+        </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="my-1 menuHeading">Services</div>
+
+                    <ul class="list-unstyled mb-1">
+                        <li>
+                            <a class="" href="/ReleaseNotes?isService=True">Personalization</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Version filtering -->
+            </div>
+
+            <input data-val="true" data-val-required="The PackageFilter field is required." id="PackageFilter" name="PackageFilter" type="hidden" value="EPiServer.CMS.Core" />
+            <input data-val="true" data-val-required="The TypeFilter field is required." id="TypeFilter" name="TypeFilter" type="hidden" value="All" />
+
+            <div class="col-12 col-lg-9" id="main-body">
+                
+<div><div>
+
+<h1>Release notes for Optimizely CMS and Customized Commerce updates</h1>
+
+
+<div class="redBox"><strong>Important<br /></strong><br />Release notes moved to a new location. As of May 15th, 2024, the release notes on the World site no longer receive updates. See <a href="https://support.optimizely.com/hc/en-us/articles/11296547622669-Release-notes-by-product">Release notes by product</a> on the Optimizely Support site.<br /><br /><span><span class="ui-provider a b c d e f g h i j k l m n o p q r s t u v w x y z ab ac ae af ag ah ai aj ak" dir="ltr">Go to your product's release notes page and </span></span> click <strong>Follow</strong> to receive an email notification whenever release notes are added.</div>
+<p>This topic lists Optimizely updates, delivered as NuGet packages and services. You decide which updates apply to your project.</p>
+<ul>
+<li><a title="Installing Optimizely updates" href="https://docs.developers.optimizely.com/content-cloud/v11.0.0-content-cloud/docs/installing-optimizely-updates-cms-11-and-commerce-13">Install updates (CMS 11 and Commerce 13)</a></li>
+<li><a href="https://docs.developers.optimizely.com/content-cloud/v12.0.0-content-cloud/docs/upgrading-to-content-cloud-cms-12">Upgrade to Optimizely Content Management System 12</a></li>
+<li><a href="https://docs.developers.optimizely.com/content-cloud/v12.0.0-content-cloud/docs/installing-optimizely-net-5">Install Optimizely Content Management System (.NET Core)</a></li>
+</ul>
+<p>Select a product, package, or service in the left menu, and then select one of the following filters from <strong>Item type</strong> and click <strong>Filter</strong>.</p>
+<ul>
+<li><strong>Bug</strong>&nbsp;&ndash; Display bug fixes.</li>
+<li><strong>Critical bug </strong>&ndash;&nbsp;Display only critical bug fixes.</li>
+<li><strong>Feature</strong> &ndash;&nbsp; Display only new features (all features).</li>
+<li><strong>UI Feature</strong>&nbsp;&ndash; Display only end-user (user interface) features.</li>
+<li><strong>Security</strong> - Display only security updates.</li>
+</ul>
+<p class="informationBox"><strong>Note:</strong> NuGet packages listed here may not be immediately available in the <a title="Optimizely NuGet feed" href="https://api.nuget.optimizely.com/" target="_blank" rel="noopener">Optimizely NuGet feed</a>.</p></div></div>
+
+                <p>Latest changes</p>
+
+                <!-- Filtering results -->
+                    <div class="mx-1 my-1 d-inline-block">
+                        <div class="font-weight-bold">Item type</div>
+                            <button class="form-control dropdown-toggle" type="button" id="typeFilter-btn"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            </button>
+                            <div id="typeFilter-menu" class="dropdown-menu" aria-labelledby="typeFilter">
+                                <div class="dropdown-item clickable" id="All"><i class="fas fa-list font-0875">&nbsp;</i> All</div>
+                                <div class="dropdown-item clickable" id="Bug"><i class="fas fa-bug txt-epi-blue font-0875">&nbsp;</i> Bug</div>
+                                <div class="dropdown-item clickable" id="CriticalBug"><i class="fas fa-exclamation-circle text-red font-0875">&nbsp;</i> Critical Bug</div>
+                                <div class="dropdown-item clickable" id="Feature"><i class="fas fa-star text-light-blue font-0875">&nbsp;</i> Feature</div>
+                                <div class="dropdown-item clickable" id="UiFeature"><i class="fas fa-desktop text-medium-blue font-0875">&nbsp;</i> UI Feature</div>
+                                <div class="dropdown-item clickable" id="Security"><i class="fas fa-shield-alt text-red font-0875 ">&nbsp;</i> Security</div>
+                            </div>
+<input id="TypeFilter" name="TypeFilter" type="hidden" value="All" />                    </div>
+                    <div class="mx-1 my-1 d-inline-block">
+                        <div class="font-weight-bold">Filter on date</div>
+                        <input type="text" name="daterange" id="daterange" class="form-control pull-right" value="">                        
+                    </div>
+                    <div class="mx-1 my-1 d-inline-block">
+                        <div class="font-weight-bold">Items/Page</div>
+                        <select class="form-control d-inline-block filter" name="pageSize">
+                            <option value="10" selected="selected">10</option>
+                            <option value="30">30</option>
+                            <option value="50">50</option>
+                        </select>
+                    </div>
+                    <div class="mx-1 my-1 d-inline-block">
+                        <input data-val="true" data-val-required="The ShowOnlyReleased field is required." id="ShowOnlyReleased" name="ShowOnlyReleased" type="checkbox" value="true" />
+                        <label for="ShowOnlyReleased">Show only released</label>
+                    </div>
+                    <div class="mx-1 my-1 d-inline-block">
+                        <button class="filter-btn" type="submit" id="main-filter"><i class="fas fa-filter"></i> Filter</button>
+                    </div>
+                    <div class="mx-1 my-1 d-inline-block">
+                        <a class="filter-btn" href="/ReleaseNotes"><i class="fas fa-redo-alt"></i> Clear filters</a>
+                    </div>
+                    <!-- Result table content -->
+                    <div class="mt-3 table-responsive" style="border: 1px solid #ddd;">
+                        <table class="forum-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50px">Area</th>
+                                    <th style="width: 150px">ID</th>
+                                    <th class="d-none d-lg-table-cell text-center" style="width: 73px">Type</th>
+                                    <th class="w-60">Description</th>
+                                    <th style="width: 140px" class="text-right">Released</th>
+                                </tr>
+                            </thead>
+
+
+
+<tr>
+    <td>
+            <img src="/globalassets/images/product-icons/svg-icons/content_32.svg" title="Optimizely Content Cloud" />
+    </td>
+    <td>
+        <span style="display: block;">
+            <a href="/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-25731">CMS-25731</a>
+        </span>
+    </td>
+    <td class="d-none d-lg-table-cell text-center">
+    </td>
+    <td class="w-60">
+        <div class="clickable mb-1" data-toggle="collapse" data-target="#CMS-25731"><i class="fas fa-angle-right text-666" style="width: 1rem">&nbsp;</i> Requesting an approval with anonymous user throws exception</div>
+        <div class="ml-3 collapse-section collapse" id="CMS-25731">
+            <p>Fixed an issue that threw an SQL exception in SPROC <b>netApprovalAdd</b> when you requested an approval on a content item with an anonymous user. The SPROC expected that the parameter @StartedBy is not null.</p>
+
+<p><b>HttpContext.User.Identity.Name</b> has changed from "" (empty string) to null between .NET Framework and ASP.NET Core.</p>
+                <div class="text-666">
+                    <i>
+                            <label>Fix Version/ s:</label>
+EPiServer.CMS.Core 12.12.0;                                  <b>(Or a <a href='https://docs.developers.optimizely.com/content-management-system/docs/nuget-package-families-in-cms'>related package</a>); </b>
+                    </i>
+                </div>
+        </div>
+    <td class="text-right">
+        <span>Jan 13, 2023</span>
+    </td>
+</tr>
+
+
+<tr>
+    <td>
+            <img src="/globalassets/images/product-icons/svg-icons/content_32.svg" title="Optimizely Content Cloud" />
+    </td>
+    <td>
+        <span style="display: block;">
+            <a href="/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-25854">CMS-25854</a>
+        </span>
+    </td>
+    <td class="d-none d-lg-table-cell text-center">
+    </td>
+    <td class="w-60">
+        <div class="clickable mb-1" data-toggle="collapse" data-target="#CMS-25854"><i class="fas fa-angle-right text-666" style="width: 1rem">&nbsp;</i> Simple address throws exception in multi-site scenario. </div>
+        <div class="ml-3 collapse-section collapse" id="CMS-25854">
+            <p>Fixed an issue where you could not have the same segment for a "simple address segment" in a multisite scenario. An error stated that the same address segment was already being used.</p>
+                <div class="text-666">
+                    <i>
+                            <label>Fix Version/ s:</label>
+EPiServer.CMS.Core 12.12.0;                                  <b>(Or a <a href='https://docs.developers.optimizely.com/content-management-system/docs/nuget-package-families-in-cms'>related package</a>); </b>
+                    </i>
+                </div>
+        </div>
+    <td class="text-right">
+        <span>Jan 13, 2023</span>
+    </td>
+</tr>
+
+
+<tr>
+    <td>
+            <img src="/globalassets/images/product-icons/svg-icons/content_32.svg" title="Optimizely Content Cloud" />
+    </td>
+    <td>
+        <span style="display: block;">
+            <a href="/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-25647">CMS-25647</a>
+        </span>
+    </td>
+    <td class="d-none d-lg-table-cell text-center">
+    </td>
+    <td class="w-60">
+        <div class="clickable mb-1" data-toggle="collapse" data-target="#CMS-25647"><i class="fas fa-angle-right text-666" style="width: 1rem">&nbsp;</i> UrlResolver gives external link with trailing slash unexpectedly</div>
+        <div class="ml-3 collapse-section collapse" id="CMS-25647">
+            <p>Fixed an issue where a trailing slash was added to external URLs, even though they were specified without one.</p>
+                <div class="text-666">
+                    <i>
+                            <label>Fix Version/ s:</label>
+EPiServer.CMS.Core 12.12.0;                                  <b>(Or a <a href='https://docs.developers.optimizely.com/content-management-system/docs/nuget-package-families-in-cms'>related package</a>); </b>
+                    </i>
+                </div>
+        </div>
+    <td class="text-right">
+        <span>Jan 13, 2023</span>
+    </td>
+</tr>
+
+
+<tr>
+    <td>
+            <img src="/globalassets/images/product-icons/svg-icons/content_32.svg" title="Optimizely Content Cloud" />
+    </td>
+    <td>
+        <span style="display: block;">
+            <a href="/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-25175">CMS-25175</a>
+        </span>
+    </td>
+    <td class="d-none d-lg-table-cell text-center">
+    </td>
+    <td class="w-60">
+        <div class="clickable mb-1" data-toggle="collapse" data-target="#CMS-25175"><i class="fas fa-angle-right text-666" style="width: 1rem">&nbsp;</i> Link validation job fails for relative links when no wildcard host</div>
+        <div class="ml-3 collapse-section collapse" id="CMS-25175">
+            <p>Fixed an issue where the link validation job failed for relative links when no wildcard host was defined.</p>
+                <div class="text-666">
+                    <i>
+                            <label>Fix Version/ s:</label>
+EPiServer.CMS.Core 12.12.0;                                  <b>(Or a <a href='https://docs.developers.optimizely.com/content-management-system/docs/nuget-package-families-in-cms'>related package</a>); </b>
+                    </i>
+                </div>
+        </div>
+    <td class="text-right">
+        <span>Jan 13, 2023</span>
+    </td>
+</tr>
+
+
+<tr>
+    <td>
+            <img src="/globalassets/images/product-icons/svg-icons/content_32.svg" title="Optimizely Content Cloud" />
+    </td>
+    <td>
+        <span style="display: block;">
+            <a href="/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-33081">CMS-33081</a>
+        </span>
+    </td>
+    <td class="d-none d-lg-table-cell text-center">
+    </td>
+    <td class="w-60">
+        <div class="clickable mb-1" data-toggle="collapse" data-target="#CMS-33081"><i class="fas fa-angle-right text-666" style="width: 1rem">&nbsp;</i> DDS failed to load object as PropertyBag when Type is missing</div>
+        <div class="ml-3 collapse-section collapse" id="CMS-33081">
+            <p>Fixed an issue that prevented the loading of an object as a <tt>PropertyBag</tt>. This issue occurred when a type with an enum property was stored in DDS and then later was no longer present. The missing missing enum value should have returned as an <tt>int</tt> but the load failed <em>System.ArgumentNullException: Value cannot be null. (Parameter 'key')</em>.</p>
+                <div class="text-666">
+                    <i>
+                            <label>Fix Version/ s:</label>
+EPiServer.CMS.Core 12.21.2;                                  <b>(Or a <a href='https://docs.developers.optimizely.com/content-management-system/docs/nuget-package-families-in-cms'>related package</a>); </b>
+                    </i>
+                </div>
+        </div>
+    <td class="text-right">
+        <span>Mar 26, 2024</span>
+    </td>
+</tr>
+
+
+<tr>
+    <td>
+            <img src="/globalassets/images/product-icons/svg-icons/content_32.svg" title="Optimizely Content Cloud" />
+    </td>
+    <td>
+        <span style="display: block;">
+            <a href="/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-32091">CMS-32091</a>
+        </span>
+    </td>
+    <td class="d-none d-lg-table-cell text-center">
+    </td>
+    <td class="w-60">
+        <div class="clickable mb-1" data-toggle="collapse" data-target="#CMS-32091"><i class="fas fa-angle-right text-666" style="width: 1rem">&nbsp;</i> IContentUrlGeneratorEvents does not contain information about query string</div>
+        <div class="ml-3 collapse-section collapse" id="CMS-32091">
+            <p>Fixed an issue with IContentUrlGeneratorEvents interface where both GeneratingUrl and GeneratedUrl did not contain URL query string information.</p>
+                <div class="text-666">
+                    <i>
+                            <label>Fix Version/ s:</label>
+EPiServer.CMS.Core 12.21.1;                                  <b>(Or a <a href='https://docs.developers.optimizely.com/content-management-system/docs/nuget-package-families-in-cms'>related package</a>); </b>
+                    </i>
+                </div>
+        </div>
+    <td class="text-right">
+        <span>Mar 19, 2024</span>
+    </td>
+</tr>
+
+
+<tr>
+    <td>
+            <img src="/globalassets/images/product-icons/svg-icons/content_32.svg" title="Optimizely Content Cloud" />
+    </td>
+    <td>
+        <span style="display: block;">
+            <a href="/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-32835">CMS-32835</a>
+        </span>
+    </td>
+    <td class="d-none d-lg-table-cell text-center">
+    </td>
+    <td class="w-60">
+        <div class="clickable mb-1" data-toggle="collapse" data-target="#CMS-32835"><i class="fas fa-angle-right text-666" style="width: 1rem">&nbsp;</i> ViewBag is empty</div>
+        <div class="ml-3 collapse-section collapse" id="CMS-32835">
+            <p>Fixed an issue where the ViewBag properties were empty in block views, even though it was populated with custom ViewData.</p>
+                <div class="text-666">
+                    <i>
+                            <label>Fix Version/ s:</label>
+EPiServer.CMS.Core 12.21.1;                                  <b>(Or a <a href='https://docs.developers.optimizely.com/content-management-system/docs/nuget-package-families-in-cms'>related package</a>); </b>
+                    </i>
+                </div>
+        </div>
+    <td class="text-right">
+        <span>Mar 19, 2024</span>
+    </td>
+</tr>
+
+
+<tr>
+    <td>
+            <img src="/globalassets/images/product-icons/svg-icons/content_32.svg" title="Optimizely Content Cloud" />
+    </td>
+    <td>
+        <span style="display: block;">
+            <a href="/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-32349">CMS-32349</a>
+        </span>
+    </td>
+    <td class="d-none d-lg-table-cell text-center">
+    </td>
+    <td class="w-60">
+        <div class="clickable mb-1" data-toggle="collapse" data-target="#CMS-32349"><i class="fas fa-angle-right text-666" style="width: 1rem">&nbsp;</i> Programmatically modifying LinkItem property</div>
+        <div class="ml-3 collapse-section collapse" id="CMS-32349">
+            <p>Fixed an issue where PropertyLinkItem and PropertyXhtmlString needed to be marked as modified to get persisted.</p>
+                <div class="text-666">
+                    <i>
+                            <label>Fix Version/ s:</label>
+EPiServer.CMS.Core 12.21.1;                                  <b>(Or a <a href='https://docs.developers.optimizely.com/content-management-system/docs/nuget-package-families-in-cms'>related package</a>); </b>
+                    </i>
+                </div>
+        </div>
+    <td class="text-right">
+        <span>Mar 19, 2024</span>
+    </td>
+</tr>
+
+
+<tr>
+    <td>
+            <img src="/globalassets/images/product-icons/svg-icons/content_32.svg" title="Optimizely Content Cloud" />
+    </td>
+    <td>
+        <span style="display: block;">
+            <a href="/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-32491">CMS-32491</a>
+        </span>
+    </td>
+    <td class="d-none d-lg-table-cell text-center">
+    </td>
+    <td class="w-60">
+        <div class="clickable mb-1" data-toggle="collapse" data-target="#CMS-32491"><i class="fas fa-angle-right text-666" style="width: 1rem">&nbsp;</i> Unnecessary regex creation with LinkValidationRunner</div>
+        <div class="ml-3 collapse-section collapse" id="CMS-32491">
+            <p>Fixed an issue where a regular expression used for validating links was created in an inefficient way and unnecessarily increased the duration of the job. </p>
+                <div class="text-666">
+                    <i>
+                            <label>Fix Version/ s:</label>
+EPiServer.CMS.Core 12.21.0;                                  <b>(Or a <a href='https://docs.developers.optimizely.com/content-management-system/docs/nuget-package-families-in-cms'>related package</a>); </b>
+                    </i>
+                </div>
+        </div>
+    <td class="text-right">
+        <span>Mar 12, 2024</span>
+    </td>
+</tr>
+
+
+<tr>
+    <td>
+            <img src="/globalassets/images/product-icons/svg-icons/content_32.svg" title="Optimizely Content Cloud" />
+    </td>
+    <td>
+        <span style="display: block;">
+            <a href="/documentation/Release-Notes/ReleaseNote/?releaseNoteId=CMS-32880">CMS-32880</a>
+        </span>
+    </td>
+    <td class="d-none d-lg-table-cell text-center">
+    </td>
+    <td class="w-60">
+        <div class="clickable mb-1" data-toggle="collapse" data-target="#CMS-32880"><i class="fas fa-angle-right text-666" style="width: 1rem">&nbsp;</i> Activites should be saved in background context</div>
+        <div class="ml-3 collapse-section collapse" id="CMS-32880">
+            <p>Fixed an issue where some activities were saved using an async method in which the calling thread completed while the background thread was being executed, and this could cause an ObjectDisposedException. Now, the background async save runs in a background context to ensure that it gets its own scoped IoC container.</p>
+                <div class="text-666">
+                    <i>
+                            <label>Fix Version/ s:</label>
+EPiServer.CMS.Core 12.21.0;                                  <b>(Or a <a href='https://docs.developers.optimizely.com/content-management-system/docs/nuget-package-families-in-cms'>related package</a>); </b>
+                    </i>
+                </div>
+        </div>
+    <td class="text-right">
+        <span>Mar 12, 2024</span>
+    </td>
+</tr>                        </table>
+                    </div>
+                    <!-- Pagination -->
+                        <div class="paging">
+
+                                <span id="1" class="paging-btn active">1</span>
+                                <span id="2" class="paging-btn ">2</span>
+                                <span id="3" class="paging-btn ">3</span>
+                                <span id="4" class="paging-btn ">4</span>
+                                <span id="5" class="paging-btn ">5</span>
+                                <span id="6" class="paging-btn ">6</span>
+
+                                <span class="paging-btn" id="2">Next</span>
+                        </div>
+            </div>
+        </div>
+    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8KJSyWd6XhJFgWUs3rz3SCuQTnmnqeXsBdg43p5dclVcRgvKLHElWOICDDgKluiXH0xyTlCcQOXJiUd9pqp3poUxVzdrINfGpcO7eDr2VdQQO-hXWSpaX_hIGKOdVBJHG4DXHT-32MRogo86t299RfE" /><input name="ShowOnlyReleased" type="hidden" value="false" /></form>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var clearDateTimeLi = document.createElement('li');
+        clearDateTimeLi.id = "clear-datetime-filter";
+        clearDateTimeLi.appendChild(document.createTextNode("Clear DateTime filter"));
+        var ddUl = document.querySelector('div.ranges ul');
+
+        $('#daterange').daterangepicker({
+            autoUpdateInput: false,
+            showCustomRangeLabel: true,
+            locale: {
+                cancelLabel: 'No datetime filter'
+            },
+            ranges: {                
+                'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                'Last 90 Days': [moment().subtract(89, 'days'), moment()],
+                'Last 365 Days': [moment().subtract(364, 'days'), moment()]
+            }
+        });
+        $('#daterange').on('apply.daterangepicker', function (ev, picker) {
+            $('#daterange').val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+            // Add button
+            AddButton();
+        });
+
+        $('#daterange').on('cancel.daterangepicker', function (ev, picker) {
+            //do something, like clearing an input
+            $('#daterange').val('');
+        });
+
+        // initialization for clear datetime button, we don't add it if the filter value is empty
+        
+        $('#daterange').on('show.daterangepicker', function (ev) {
+            if (ev.target.value) {
+                AddButton();   
+            }
+        });
+
+        function AddButton() {
+            document.querySelector('div.ranges ul').appendChild(clearDateTimeLi);
+            $(clearDateTimeLi).click(function () {
+                $('#daterange').val('');
+                $('#daterange').data('daterangepicker').hide();
+            })
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    function iconClick(caller) {
+        jQuery(caller).off("click");
+        jQuery(caller).toggleClass("fa-caret-down").toggleClass("fa-caret-right");
+        jQuery(caller).siblings("ul").toggleClass("d-none");
+    }
+
+    function expandAll(e) {
+        jQuery('.navigateItem.fa-caret-right').click();
+        jQuery(e).addClass('d-none');
+        jQuery('#collapse').removeClass('d-none');
+    }
+
+    function collapseAll(e) {
+        jQuery('.navigateItem.fa-caret-down').click();
+        jQuery(e).addClass('d-none');
+        jQuery('#expand').removeClass('d-none');
+    }
+
+    jQuery(document).ready(function () {
+        // initialize default value
+        jQuery('#typeFilter-btn').html(jQuery('#' + 'All').html());
+
+        // datepicker setup
+        jQuery(".date").datepicker({ dateFormat: 'yy-mm-dd' });
+
+        // if all versions are checked, All version input should be checked
+        if (jQuery('.VersionFilters:checked').length === jQuery('.VersionFilters').length)
+            jQuery('#selectAll').prop('checked', true);
+
+        // Collapse/expand td
+        $('.collapse-section').on('show.bs.collapse hide.bs.collapse', function () {
+            $(this.previousElementSibling).find('.fas').toggleClass('fa-angle-right').toggleClass('fa-angle-down');
+        })
+
+        // If no version is checked, All version input should be checked
+        if (jQuery('.VersionFilters:checked').length === 0) {
+            jQuery('#selectAll').prop('checked', true);
+            jQuery('.VersionFilters').prop('checked', true);
+        }
+
+        // When user select all items manually, the All version input should be checked as well
+        $('.VersionFilters').click(function () {
+            if (jQuery('.VersionFilters:checked').length === jQuery('.VersionFilters').length)
+                jQuery('#selectAll').prop('checked', true);
+            else
+                jQuery('#selectAll').prop('checked', false);
+        });
+
+        // User click select all btn
+        jQuery('#selectAll').click(function (e) {
+            if (this.checked)
+                jQuery('.VersionFilters').prop('checked', true);
+            else
+                jQuery('.VersionFilters').prop('checked', false);
+        });
+
+        // User click filter btn
+        jQuery('#versionSubmit').click(function (e) {
+            if (jQuery('.VersionFilters:checked').length === 0) {
+                e.preventDefault();
+                alert("At least one version must be selected for filtering.");
+            }
+        });
+
+        // User click paging btn
+        jQuery('.paging span').click(function () {
+            jQuery('.paging').after("<input name='PageIndex' type='hidden' value='" + this.id + "' />");
+            jQuery('#main-filter').click();
+        });
+
+        // User click Type Filter dropdown
+        jQuery('#typeFilter-menu .dropdown-item').click(function (e) {
+            jQuery("input#TypeFilter").val(e.target.id);
+            var curHtml = e.target.innerHTML;
+            jQuery('#typeFilter-btn').html(curHtml);
+        });
+    });    
+</script>
+
+<style>
+    .bg-epi-gray-box .fa {
+        font-size: .875rem
+    }
+
+    #main-body .form-control {
+        cursor: pointer;
+    }
+</style>
+    </div>
+
+        <script>
+            jQuery(this).scroll(function () {
+                if (jQuery(this).scrollTop() > 100) {
+                    jQuery('.backToTop').fadeIn();
+                } else {
+                    jQuery('.backToTop').fadeOut();
+                }
+            });
+        </script>
+
+    <a class="backToTop" href="#top" style="display: none;"><img src="/resources/images/chevron.png" alt="" title=""></a>
+    <div class="clearfix"></div>
+
+    
+<footer class="py-3 mt-32">
+    <div class="container">
+        <div class="row">
+            <a href="/" class="footerIcon">
+                        <img src="/globalassets/startpage/optimizely_logo_icon.svg" alt="Optimizely Logo" />
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="w-100 footerNav">
+                    <div class="block editorblock  col-12 col-lg-3">
+                        <h3>About Optimizely</h3>
+<ul>
+<li><a title="episerver.com" href="https://www.Optimizely.com/" target="_blank" rel="noopener">Optimizely.com</a></li>
+<li><a title="Optimizely Certification" href="https://www.optimizely.com/support/education/certification/" target="_blank" rel="noopener">Optimizely certification</a></li>
+<li><a title="Job openings" href="https://careers.optimizely.com/" target="_blank" rel="noopener">Job openings</a></li>
+<li><a href="https://license.episerver.com/">License center</a></li>
+</ul>
+                    </div>
+                    <div class="block editorblock  col-12 col-lg-3">
+                        <h3>Community</h3>
+<ul>
+<li><a href="/link/ed828821aeb74380ba334ce78ad022f5.aspx" title="OMVP program" rel="noopener">OMVP program</a></li>
+<li><a href="/link/6246aaa0798a4d719dd57925e02ffdf0.aspx">Happy hours</a></li>
+<li><a href="/link/641b1512405b405ca9ffd515aebb08ae.aspx" title="Forums">Forums</a></li>
+<li><a href="/link/bccc323fc15e45259d7a934d1efb5d52.aspx" title="Blogs">Blogs</a></li>
+<li><a href="https://join.slack.com/t/optimizely-community/shared_invite/zt-2nkth5i5c-oFVarlrwAUyyQofKWDjsqw" title="Slack" target="_blank" rel="noopener">Slack</a></li>
+<li><a href="/link/4d2287b06a684a038587debf32cf3222.aspx">Product feedback</a></li>
+</ul>
+                    </div>
+                    <div class="block editorblock  col-12 col-lg-3">
+                        <h3>Learning resources</h3>
+<ul>
+<li><a href="https://www.optimizely.com/partners/portal/" title="Optimizely Partner Portal" target="_blank" rel="noopener">Partner portal</a></li>
+<li><a href="/link/ce391d28abbd4a2cbcbb06319f3a5ffa.aspx" title="Developer guides">Developer guides</a></li>
+<li><a href="https://support.optimizely.com/hc/en-us" title="Optimizely User Guide" target="_blank" rel="noopener">User guide</a></li>
+<li><a href="/link/094aaffdc7a74bb0b331def859a08d83.aspx" title="Video tutorials">Video tutorials</a></li>
+<li><a href="https://github.com/episerver" title="Episerver on GitHub" target="_blank" rel="noopener">GitHub</a></li>
+<li><a href="https://www.optimizely.com/support/education/" title="Optimizely Education Services" target="_blank" rel="noopener">Optimizely Academy</a></li>
+</ul>
+                    </div>
+                    <div class="block editorblock  col-12 col-lg-3">
+                        <h3>Contact</h3>
+<h4>Optimizely support</h4>
+<p>See the <a title="Optimizely Support" href="/link/6ec15d46d8bb4d509ef8a6694f0ecb28.aspx">support page</a> for contact information.</p>
+<h4>Feedback on Optimizely World</h4>
+<div>If you&rsquo;d like to give feedback about this site, please <a class=" jsBtnFeedback" title="Feedback" href="mailto:epw@optimizely.com"><u><strong>click here</strong></u></a>. Thank you very much!</div>
+                    </div>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+<footer class="bottomRow">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul>
+                    <li>© Optimizely 2026</li>
+                                <li><a title="About the Optmizely World site - community information and technical details" href="/about-optimizely-world/" target="_top">About Optimizely World</a></li>
+                                <li><a href="https://www.optimizely.com/legal/privacy-notice/">Privacy notice</a></li>
+                                <li><a href="https://www.optimizely.com/legal/website-terms-of-use/" target="_blank">Terms of use</a></li>
+                                <li><a href="https://www.optimizely.com/trust-center" target="_blank">Trust center</a></li>
+                                <li><a href="https://www.optimizely.com/compliance/" target="_blank">Compliance</a></li>
+                                <li><a href="https://www.optimizely.com/legal/third-party-add-ons-platform-integration-terms/" target="_blank">3rd Party Integrations</a></li>
+                </ul>
+            </div>
+
+                    <div class="col">
+                        <ul>
+                                <li><a class="icon" href="https://www.linkedin.com/company/optimizely/" target="_blank"></a></li>
+                                <li><a class="icon" href="https://www.instagram.com/optimizely/" target="_blank"></a></li>
+                                <li><a class="icon" href="https://www.youtube.com/user/optimizely" target="_blank"></a></li>
+                                <li><a class="icon" href="https://www.facebook.com/optimizely" target="_blank"></a></li>
+                        </ul>
+                    </div>
+        </div>
+    </div>
+</footer>
+    <script defer="defer" src="/Util/Find/epi-util/find.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){if(typeof FindApi === 'function'){var api = new FindApi();api.setApplicationUrl('/');api.setServiceApiBaseUrl('/find_v2/');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}})
+</script>
+
+
+</body>
+
+</html>

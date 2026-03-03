@@ -1,0 +1,14 @@
+# Generated at runtime
+known_issues.json
+nugetchk_report.json
+
+# Downloaded binary
+jq.exe
+jq
+
+# Logs and temp output
+*.log
+*.txt
+
+# Test temp files
+test/test_write.txt

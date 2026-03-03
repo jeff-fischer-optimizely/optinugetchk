@@ -1,0 +1,167 @@
+{
+  "generated_at": "2026-02-18T14:32:07Z",
+  "app_root": "/home/site/wwwroot",
+  "deps_file": "MyEpiSite.deps.json",
+  "installed_package_count": 4,
+  "packages_with_issues": 3,
+  "total_issue_entries": 12,
+  "installed_packages": [
+    {
+      "name": "EPiServer.CMS.Core",
+      "version": "12.10.0"
+    },
+    {
+      "name": "EPiServer.CMS.UI",
+      "version": "12.18.0"
+    },
+    {
+      "name": "EPiServer.Find",
+      "version": "16.1.0"
+    },
+    {
+      "name": "Optimizely.ContentGraph.Cms",
+      "version": "3.5.0"
+    }
+  ],
+  "latest_versions": {
+    "EPiServer.CMS.Core": "12.22.9",
+    "EPiServer.CMS.UI": "12.30.1",
+    "EPiServer.Find": "16.3.2",
+    "Optimizely.ContentGraph.Cms": "3.8.0"
+  },
+  "recommendations": [
+    {
+      "package": "EPiServer.CMS.Core",
+      "installed_version": "12.10.0",
+      "latest_available": "12.22.9",
+      "issues_fixed_in_newer": 8,
+      "matched_keywords": [
+        "high memory",
+        "memory leak",
+        "performance",
+        "slow"
+      ],
+      "details": [
+        {
+          "release_note_id": "CMS-16332",
+          "fix_version": "12.11.0",
+          "keywords": [
+            "high memory"
+          ],
+          "snippet": "CMS-16332 Bug XhtmlString/ContentArea consumed considerably more memory than they were actually storing, and sites with large amount of content could have unnecessary memory usage."
+        },
+        {
+          "release_note_id": "CMS-32491",
+          "fix_version": "12.21.0",
+          "keywords": [
+            "performance",
+            "slow"
+          ],
+          "snippet": "CMS-32491 Bug Unnecessary regex creation with LinkValidationRunner. The regular expression used for validating links was created in an inefficient way and unnecessarily increased the duration of the job."
+        },
+        {
+          "release_note_id": "CMS-40238",
+          "fix_version": "12.22.0",
+          "keywords": [
+            "memory leak"
+          ],
+          "snippet": "CMS-40238 Bug Fixed a potential memory leak in ContentArea where event handlers were registered but not properly unregistered. The correction ensures that event handlers are now correctly managed."
+        },
+        {
+          "release_note_id": "CMS-40239",
+          "fix_version": "12.22.0",
+          "keywords": [
+            "memory leak"
+          ],
+          "snippet": "CMS-40239 Bug Fixed a potential memory leak in XhtmlString where event handlers were registered but not properly unregistered. The correction ensures that event handlers are now correctly managed."
+        },
+        {
+          "release_note_id": "CMS-42164",
+          "fix_version": "12.22.2",
+          "keywords": [
+            "performance",
+            "slow"
+          ],
+          "snippet": "CMS-42164 Bug Fixed an issue where missing EPiServerDataIndex attributes on SourceLink and ParentLink properties of ParentRestoreEntity resulted in slow lookups. Adding these attributes significantly improves query performance."
+        },
+        {
+          "release_note_id": "CMS-44859",
+          "fix_version": "12.22.5",
+          "keywords": [
+            "performance",
+            "slow"
+          ],
+          "snippet": "CMS-44859 Bug Fixed a performance bottleneck where each subscriber registration triggered a separate database query to check for notification users."
+        },
+        {
+          "release_note_id": "CMS-46185",
+          "fix_version": "12.22.8",
+          "keywords": [
+            "memory leak",
+            "performance"
+          ],
+          "snippet": "CMS-46185 Bug Fixed circular reference detection in ContentApiModelTransformer to prevent infinite recursion and memory issues."
+        },
+        {
+          "release_note_id": "CMS-46561",
+          "fix_version": "12.22.9",
+          "keywords": [
+            "performance"
+          ],
+          "snippet": "CMS-46561 Bug Fixed an issue where the delta synchronization process repeatedly loaded referenced content within different batches, causing redundant re-indexing and reduced performance."
+        }
+      ]
+    },
+    {
+      "package": "EPiServer.CMS.UI",
+      "installed_version": "12.18.0",
+      "latest_available": "12.30.1",
+      "issues_fixed_in_newer": 2,
+      "matched_keywords": [
+        "memory leak",
+        "performance",
+        "slow"
+      ],
+      "details": [
+        {
+          "release_note_id": "CMS-32491",
+          "fix_version": "12.21.0",
+          "keywords": [
+            "performance",
+            "slow"
+          ],
+          "snippet": "CMS-32491 Bug Unnecessary regex creation with LinkValidationRunner. The regular expression used for validating links was created in an inefficient way and unnecessarily increased the duration of the job."
+        },
+        {
+          "release_note_id": "CMS-40238",
+          "fix_version": "12.22.0",
+          "keywords": [
+            "memory leak"
+          ],
+          "snippet": "CMS-40238 Bug Fixed a potential memory leak in ContentArea where event handlers were registered but not properly unregistered."
+        }
+      ]
+    },
+    {
+      "package": "EPiServer.Find",
+      "installed_version": "16.1.0",
+      "latest_available": "16.3.2",
+      "issues_fixed_in_newer": 1,
+      "matched_keywords": [
+        "performance",
+        "timeout"
+      ],
+      "details": [
+        {
+          "release_note_id": "FIND-9812",
+          "fix_version": "16.2.0",
+          "keywords": [
+            "timeout",
+            "performance"
+          ],
+          "snippet": "FIND-9812 Bug Fixed timeout issues during large content index rebuilds where the connection would drop before completion."
+        }
+      ]
+    }
+  ]
+}

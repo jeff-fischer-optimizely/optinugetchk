@@ -1,0 +1,116 @@
+[
+  {
+    "package": "EPiServer.CMS",
+    "release_note_id": "CMS-40238",
+    "fix_version": "12.22.0",
+    "matched_keywords": [
+      "memory leak"
+    ],
+    "release_notes_snippet": "CMS-40238 Bug Fixed a potential memory leak in ContentArea where event handlers were registered but not properly unregistered. The correction ensures that event handlers are now correctly managed."
+  },
+  {
+    "package": "EPiServer.CMS",
+    "release_note_id": "CMS-40239",
+    "fix_version": "12.22.0",
+    "matched_keywords": [
+      "memory leak"
+    ],
+    "release_notes_snippet": "CMS-40239 Bug Fixed a potential memory leak in XhtmlString where event handlers were registered but not properly unregistered. The correction ensures that event handlers are now correctly managed."
+  },
+  {
+    "package": "EPiServer.CMS",
+    "release_note_id": "CMS-21010",
+    "fix_version": "12.3.0",
+    "matched_keywords": [
+      "performance"
+    ],
+    "release_notes_snippet": "CMS-21010 Feature Performance improvements were made by reducing the number of allocations in Garbage Collector."
+  },
+  {
+    "package": "EPiServer.CMS",
+    "release_note_id": "CMS-21196",
+    "fix_version": "12.3.0",
+    "matched_keywords": [
+      "performance",
+      "memory leak"
+    ],
+    "release_notes_snippet": "CMS-21196 Feature When resolving a language resource key, additional strings were allocated for the different parts of the key, improved by using ReadonlyMemory<char> so calls to LocalizationService.GetString allocated less memory."
+  },
+  {
+    "package": "EPiServer.CMS",
+    "release_note_id": "CMS-21204",
+    "fix_version": "12.3.0",
+    "matched_keywords": [
+      "performance"
+    ],
+    "release_notes_snippet": "CMS-21204 Feature Performance improvements were made by reducing allocations for ContentReference.Parse."
+  },
+  {
+    "package": "EPiServer.CMS",
+    "release_note_id": "CMS-16332",
+    "fix_version": "12.11.0",
+    "matched_keywords": [
+      "high memory"
+    ],
+    "release_notes_snippet": "CMS-16332 Bug XhtmlString/ContentArea consumed considerably more memory than they were actually storing, and sites with large amount of content could have unnecessary memory usage."
+  },
+  {
+    "package": "EPiServer.CMS.Core",
+    "release_note_id": "CMS-44859",
+    "fix_version": "12.22.5",
+    "matched_keywords": [
+      "performance",
+      "slow"
+    ],
+    "release_notes_snippet": "CMS-44859 Bug Fixed a performance bottleneck where each subscriber registration triggered a separate database query to check for notification users."
+  },
+  {
+    "package": "EPiServer.CMS.Core",
+    "release_note_id": "CMS-42164",
+    "fix_version": "12.22.2",
+    "matched_keywords": [
+      "performance",
+      "slow"
+    ],
+    "release_notes_snippet": "CMS-42164 Bug Fixed an issue where missing EPiServerDataIndex attributes on SourceLink and ParentLink properties of ParentRestoreEntity resulted in slow lookups. Adding these attributes significantly improves query performance."
+  },
+  {
+    "package": "EPiServer.CMS.Core",
+    "release_note_id": "CMS-46185",
+    "fix_version": "12.22.8",
+    "matched_keywords": [
+      "memory leak",
+      "performance"
+    ],
+    "release_notes_snippet": "CMS-46185 Bug Fixed circular reference detection in ContentApiModelTransformer to prevent infinite recursion and memory issues."
+  },
+  {
+    "package": "EPiServer.CMS.Core",
+    "release_note_id": "CMS-46561",
+    "fix_version": "12.22.9",
+    "matched_keywords": [
+      "performance"
+    ],
+    "release_notes_snippet": "CMS-46561 Bug Fixed an issue where the delta synchronization process repeatedly loaded referenced content within different batches, causing redundant re-indexing and reduced performance."
+  },
+  {
+    "package": "EPiServer.CMS",
+    "release_note_id": "CMS-32491",
+    "fix_version": "12.21.0",
+    "matched_keywords": [
+      "performance",
+      "slow"
+    ],
+    "release_notes_snippet": "CMS-32491 Bug Unnecessary regex creation with LinkValidationRunner. The regular expression used for validating links was created in an inefficient way and unnecessarily increased the duration of the job."
+  },
+  {
+    "package": "EPiServer.Find",
+    "release_note_id": "FIND-9812",
+    "fix_version": "16.2.0",
+    "matched_keywords": [
+      "timeout",
+      "performance"
+    ],
+    "release_notes_snippet": "FIND-9812 Bug Fixed timeout issues during large content index rebuilds where the connection would drop before completion."
+  }
+]

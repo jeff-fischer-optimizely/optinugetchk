@@ -10,6 +10,7 @@ EPiServer/Optimizely NuGet Package Health Checker — a self-contained bash scri
 - **Installed version detection** — reads directly from your app's `.deps.json`; no build tools required
 - **Latest version lookup** — queries `nuget.optimizely.com` for the latest same-major and absolute-latest versions per package
 - **Release notes scraping** — fetches release notes from `world.optimizely.com` at runtime and scans for keywords related to memory leaks, performance, timeouts, deadlocks, and more
+- **Release notes cache** — scraped notes are saved to a zip file named after your app; subsequent runs prompt to reuse the cache or refresh, making re-runs fast
 - **Keyword highlighting** — matched keywords are highlighted in bright yellow in the terminal output
 - **Word-wrapped notes** (`--notes`) — shows every release note between your installed version and latest, with URLs, word-wrapped at 100 columns
 - **JSON report** — writes `nugetchk_report.json` and `known_issues.json` next to the script for further processing
@@ -116,9 +117,29 @@ When `--notes` is specified, each package entry also shows:
 1. **Locate** — finds the first `*.deps.json` in the current directory, script directory, or app root
 2. **Extract** — parses all `EPiServer.*` and `Optimizely.*` package names and versions from the deps file
 3. **Query** — fetches latest same-major and absolute-latest versions from `nuget.optimizely.com` for each package
-4. **Scrape** — fetches release notes from `world.optimizely.com` using `?packageFilter=<PackageName>` per package, with automatic parent-name fallback (e.g. `EPiServer.Forms.Core` → `EPiServer.Forms`) and deduplication across related packages in the same product family
+4. **Scrape** — fetches release notes from `world.optimizely.com` using `?packageFilter=<PackageName>` per package, with automatic parent-name fallback (e.g. `EPiServer.Forms.Core` → `EPiServer.Forms`) and deduplication across related packages in the same product family; results are cached to a zip file for fast re-runs
 5. **Match** — scans each release note description for keywords (memory leak, performance, timeout, deadlock, etc.)
 6. **Report** — renders the results table and writes JSON report files
+
+## Release Notes Cache
+
+After scraping, the raw release notes are saved to a zip file next to the script, named after your application:
+
+```
+MyApp_nugetchk_notes.zip
+```
+
+On subsequent runs, if the zip exists you are prompted:
+
+```
+  Cached release notes found: MyApp_nugetchk_notes.zip (2026-03-02 14:35)
+  Refresh? [y/N]
+```
+
+- Press **Enter** or **N** — loads from the zip instantly (no network calls for scraping)
+- Press **Y** — re-scrapes from `world.optimizely.com` and overwrites the cache
+
+When run non-interactively (e.g. from a script), the cache is used silently without prompting. Requires `zip`/`unzip` to be available; gracefully falls back to scraping every time if they are not.
 
 ### Keywords scanned
 
@@ -156,6 +177,7 @@ Both files are written next to the script:
 |---|---|
 | `nugetchk_report.json` | Full report: all installed packages, latest versions, and recommendations |
 | `known_issues.json` | Keyword-matched release note entries only |
+| `<AppName>_nugetchk_notes.zip` | Cached release notes TSV; reused on subsequent runs to skip scraping |
 
 ---
 

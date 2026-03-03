@@ -453,6 +453,11 @@ main() {
   local deps_file
   deps_file=$(find_deps_json)
 
+  # Derive per-app cache zip from the deps.json filename
+  local app_name notes_zip
+  app_name=$(basename "$deps_file" .deps.json)
+  notes_zip="$SCRIPT_DIR/${app_name}_nugetchk_notes.zip"
+
   # Step 2: Extract installed packages
   local tmp_dir
   tmp_dir=$(mktemp -d)
@@ -535,15 +540,50 @@ main() {
   local db_file="$tmp_dir/_release_notes.tsv"
   : > "$db_file"
 
-  if [[ ${#packages_needed[@]} -gt 0 ]]; then
-    scrape_world_release_notes "$db_file" "${packages_needed[@]}"
-  else
-    warn "No EPiServer/Optimizely packages found for release note lookup"
+  local skip_scrape=false
+  if [[ -f "$notes_zip" ]] && command -v unzip >/dev/null 2>&1; then
+    local zip_date
+    zip_date=$(date -r "$notes_zip" "+%Y-%m-%d %H:%M" 2>/dev/null || echo "unknown date")
+    printf "\n  Cached release notes found: %s (%s)\n" "$(basename "$notes_zip")" "$zip_date"
+    printf "  Refresh? [y/N] "
+    local answer=""
+    if [[ -t 0 ]]; then
+      read -r answer
+    else
+      read -r answer < /dev/tty 2>/dev/null || answer=""
+    fi
+    if [[ ! "$answer" =~ ^[Yy] ]]; then
+      if unzip -p "$notes_zip" "_release_notes.tsv" > "$db_file" 2>/dev/null; then
+        local cached_lines
+        cached_lines=$(wc -l < "$db_file" | tr -d ' ')
+        printf "  Loaded %s release notes from cache.\n" "$cached_lines"
+        skip_scrape=true
+      else
+        warn "Failed to read cache, scraping fresh ..."
+        : > "$db_file"
+      fi
+    fi
+  fi
+
+  if [[ "$skip_scrape" == "false" ]]; then
+    if [[ ${#packages_needed[@]} -gt 0 ]]; then
+      scrape_world_release_notes "$db_file" "${packages_needed[@]}"
+    else
+      warn "No EPiServer/Optimizely packages found for release note lookup"
+    fi
+
+    # Cache the freshly scraped notes to zip
+    if command -v zip >/dev/null 2>&1; then
+      zip -j "$notes_zip" "$db_file" >/dev/null 2>&1 && \
+        log "Release notes cached to $(basename "$notes_zip")"
+    fi
   fi
 
   local note_total
   note_total=$(wc -l < "$db_file" | tr -d ' ')
-  printf "  Fetched %s release notes from world.optimizely.com\n" "$note_total"
+  if [[ "$skip_scrape" == "false" ]]; then
+    printf "  Fetched %s release notes from world.optimizely.com\n" "$note_total"
+  fi
 
   # Debug: show the TSV contents
   dbg "Step 4: TSV file has ${note_total} lines"

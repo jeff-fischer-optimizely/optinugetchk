@@ -1,6 +1,7 @@
 # Generated at runtime
 known_issues.json
 nugetchk_report.json
+*_nugetchk_notes.zip
 
 # Downloaded binary
 jq.exe

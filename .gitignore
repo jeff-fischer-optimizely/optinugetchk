@@ -11,5 +11,8 @@ jq
 *.log
 *.txt
 
+# Claude Code settings
+.claude/
+
 # Test temp files
 test/test_write.txt

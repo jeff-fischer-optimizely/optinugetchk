@@ -2,10 +2,12 @@
 # nugetchk.sh - EPiServer/Optimizely NuGet Package Health Checker
 # Designed to run on Azure App Service Linux (Kudu SSH)
 #
-# Usage: bash nugetchk.sh [--notes] [--debug] [app_root_path]
+# Usage: bash nugetchk.sh [--notes] [--debug] [--deps <file>] [app_root_path]
 #   --notes          Show all release note summaries between installed and latest
 #   --debug          Show verbose debug output to stderr
-#   app_root_path    defaults to /home/site/wwwroot
+#   --deps <file>    Use an explicit .deps.json file (skip auto-discovery).
+#                    A positional argument ending in .deps.json works too.
+#   app_root_path    directory to search for *.deps.json; defaults to /home/site/wwwroot
 #
 # Data sources:
 #   - Installed packages:  parsed from .deps.json in the app root
@@ -15,15 +17,38 @@
 
 set -euo pipefail
 
+usage() {
+  cat <<'EOF'
+Usage: bash nugetchk.sh [options] [app_root | deps_file]
+  -n, --notes         Show release-note summaries between installed and latest
+  -f, --deps <file>   Use an explicit .deps.json file (skip auto-discovery)
+  -d, --debug         Verbose debug output to stderr
+  -h, --help          Show this help and exit
+
+A positional argument ending in ".deps.json" is treated as --deps; any other
+positional argument is treated as the app root to search (default: /home/site/wwwroot).
+EOF
+}
+
 # -- Parse arguments -----------------------------------------------------------
 SHOW_NOTES=false
 DEBUG=false
 APP_ROOT="/home/site/wwwroot"
-for arg in "$@"; do
-  case "$arg" in
-    --notes|-n)   SHOW_NOTES=true ;;
-    --debug|-d)   DEBUG=true ;;
-    *)            APP_ROOT="$arg" ;;
+DEPS_FILE_ARG=""
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -n|--notes)   SHOW_NOTES=true; shift ;;
+    -d|--debug)   DEBUG=true; shift ;;
+    -h|--help)    usage; exit 0 ;;
+    -f|--deps)
+      if [[ $# -lt 2 ]]; then
+        printf '[nugetchk] ERROR: %s requires a file path\n' "$1" >&2
+        exit 1
+      fi
+      DEPS_FILE_ARG="$2"; shift 2 ;;
+    --deps=*)     DEPS_FILE_ARG="${1#*=}"; shift ;;
+    *.deps.json)  DEPS_FILE_ARG="$1"; shift ;;
+    *)            APP_ROOT="$1"; shift ;;
   esac
 done
 OPTI_NUGET_REG="https://nuget.optimizely.com/v3/registration"
@@ -119,10 +144,13 @@ version_delta() {
   local dmin=$((10#$bm - 10#$am))
   local dpat=$((10#$bp - 10#$ap))
 
+  # Only report components that increased. A lower-order component that went
+  # "backwards" (e.g. 12.21.6 -> 12.24.0 has patch 6 -> 0) is an artifact of a
+  # higher-order bump resetting it, not a meaningful "-6 patches" delta.
   local parts=()
-  if ((dmaj != 0)); then parts+=("${dmaj}maj"); fi
-  if ((dmin != 0)); then parts+=("${dmin}min"); fi
-  if ((dpat != 0)); then parts+=("${dpat}pat"); fi
+  if ((dmaj > 0)); then parts+=("${dmaj}maj"); fi
+  if ((dmin > 0)); then parts+=("${dmin}min"); fi
+  if ((dpat > 0)); then parts+=("${dpat}pat"); fi
 
   if [[ ${#parts[@]} -eq 0 ]]; then
     echo "up to date"
@@ -326,9 +354,14 @@ scrape_world_release_notes() {
         if [[ "$seen_ids" == *"|${nid}|"* ]]; then continue; fi
         seen_ids="${seen_ids}|${nid}|"
 
-        # Strip HTML tags for text extraction
+        # Strip HTML tags for text extraction.
+        # Remove Material Symbols icon spans first: their glyph text (e.g.
+        # "chevron_right") is plain content, so it survives tag-stripping and
+        # would otherwise prefix every snippet.
         local text
-        text=$(echo "$segment" | sed 's/<[^>]*>//g' | tr -s ' ')
+        text=$(echo "$segment" \
+          | sed 's/<span[^>]*material-symbols[^>]*>[^<]*<\/span>//g' \
+          | sed 's/<[^>]*>//g' | tr -s ' ')
 
         # Description: text after the ID, before "Fix Version/s:"
         local desc
@@ -380,6 +413,15 @@ scrape_world_release_notes() {
 # -- Step 1: Locate deps.json --------------------------------------------------
 
 find_deps_json() {
+  # Explicit file wins: customers may ship several *.deps.json in one build,
+  # so auto-discovery can otherwise pick the wrong one.
+  if [[ -n "$DEPS_FILE_ARG" ]]; then
+    [[ -f "$DEPS_FILE_ARG" ]] || die "Specified deps file not found: $DEPS_FILE_ARG"
+    log "Using specified deps file: $DEPS_FILE_ARG"
+    echo "$DEPS_FILE_ARG"
+    return
+  fi
+
   local found=""
   local search_dirs=("." "$SCRIPT_DIR" "$APP_ROOT")
 

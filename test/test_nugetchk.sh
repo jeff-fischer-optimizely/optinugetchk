@@ -116,6 +116,9 @@ assert_eq "$(version_delta "12.0.0" "13.0.0")" "+1maj" "delta: 12.0.0 → 13.0.0
 assert_eq "$(version_delta "1.0.0" "1.0.0")" "up to date" "delta: equal versions"
 assert_eq "$(version_delta "1.0.0" "unknown")" "?" "delta: unknown latest"
 assert_eq "$(version_delta "1.0.0" "1.0.5")" "+5pat" "delta: patch only"
+# A reset patch after a minor bump must not show as a negative ("-6pat") delta
+assert_eq "$(version_delta "12.21.6" "12.24.0")" "+3min" "delta: reset patch not shown negative"
+assert_eq "$(version_delta "12.21.6" "13.20.0")" "+1maj" "delta: lower-order resets dropped on major bump"
 
 # =============================================================================
 # 4. pkg_to_world_group
@@ -212,6 +215,11 @@ if [[ -f "$SAMPLE_HTML" ]]; then
 
   v_32880=$(grep "^CMS-32880" "$tmp_tsv" | cut -f3)
   assert_eq "$v_32880" "12.21.0" "parser: CMS-32880 fix version is 12.21.0"
+
+  # Material Symbols icon glyph text must not leak into descriptions.
+  # CMS-25731's row uses a <span class="material-symbols-...">chevron_right</span>.
+  chevron_leak=$(cut -f4 "$tmp_tsv" | grep -c 'chevron_right' || true)
+  assert_eq "$chevron_leak" "0" "parser: strips material-symbols glyph text (chevron_right)"
 
   # Remove curl mock
   unset -f curl

@@ -36,14 +36,16 @@ curl -fsSL https://raw.githubusercontent.com/jeff-fischer-optimizely/optinugetch
 ## Usage
 
 ```
-bash nugetchk.sh [--notes] [--debug] [app_root_path]
+bash nugetchk.sh [--notes] [--debug] [--deps <file>] [app_root_path | deps_file]
 ```
 
 | Option | Short | Description |
 |---|---|---|
 | `--notes` | `-n` | Show all release note summaries between installed and latest version |
+| `--deps <file>` | `-f` | Use an explicit `.deps.json` file, skipping auto-discovery |
 | `--debug` | `-d` | Emit verbose diagnostic output to stderr |
-| `app_root_path` | | Path to your app root (default: `/home/site/wwwroot`) |
+| `--help` | `-h` | Show usage and exit |
+| `app_root_path` / `deps_file` | | A directory to search for `*.deps.json` (default: `/home/site/wwwroot`), or a path ending in `.deps.json` to use that file directly |
 
 ### Examples
 
@@ -59,6 +61,12 @@ bash nugetchk.sh /home/site/wwwroot/myapp
 
 # Full notes for a specific path
 bash nugetchk.sh --notes /home/site/wwwroot/myapp
+
+# Use an explicit deps.json (when a build ships several *.deps.json files)
+bash nugetchk.sh --deps /home/site/wwwroot/MyApp.deps.json
+
+# A positional *.deps.json path works the same way
+bash nugetchk.sh MyApp.deps.json
 
 # Verbose diagnostic output
 bash nugetchk.sh --debug 2>debug.log
@@ -78,7 +86,7 @@ bash nugetchk.sh --debug 2>debug.log
   EPiServer.Commerce.Core                  14.34.0        14.45.1        +11min           (none)
 ```
 
-- **DELTA** — version distance from installed to latest same-major (`+Nmaj`, `+Nmin`, `+Npat`, or `up to date`)
+- **DELTA** — version distance from installed to latest same-major (`+Nmaj`, `+Nmin`, `+Npat`, or `up to date`). Only components that increased are shown, so a patch number reset by a minor bump (e.g. `12.21.6` → `12.24.0`) reports `+3min`, not a misleading `-6pat`
 - **ISSUES FOUND** — keywords matched in release notes; highlighted in yellow when a match is found
 
 ### Release notes (`--notes`)
@@ -114,7 +122,7 @@ When `--notes` is specified, each package entry also shows:
 
 ## How It Works
 
-1. **Locate** — finds the first `*.deps.json` in the current directory, script directory, or app root
+1. **Locate** — uses the `--deps` file if provided (or a positional `*.deps.json` argument); otherwise finds the first `*.deps.json` in the current directory, script directory, or app root
 2. **Extract** — parses all `EPiServer.*` and `Optimizely.*` package names and versions from the deps file
 3. **Query** — fetches latest same-major and absolute-latest versions from `nuget.optimizely.com` for each package
 4. **Scrape** — fetches release notes from `world.optimizely.com` using `?packageFilter=<PackageName>` per package, with automatic parent-name fallback (e.g. `EPiServer.Forms.Core` → `EPiServer.Forms`) and deduplication across related packages in the same product family; results are cached to a zip file for fast re-runs
@@ -189,7 +197,7 @@ The test suite requires `bash` and `jq`:
 bash test/test_nugetchk.sh
 ```
 
-37 functional tests covering semver comparison, version delta, HTML parsing, and keyword matching.
+40 functional tests covering semver comparison, version delta, HTML parsing, and keyword matching.
 
 ---
 

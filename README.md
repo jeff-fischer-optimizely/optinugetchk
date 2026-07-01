@@ -17,7 +17,9 @@ EPiServer/Optimizely NuGet Package Health Checker — a self-contained bash scri
 
 ---
 
-## Quick Start (Azure App Service Linux — Kudu SSH)
+## QuickStart
+
+### Azure App Service Linux — Kudu SSH
 
 One-liner to download and run directly on your App Service:
 
@@ -29,6 +31,12 @@ To also show all release notes between your installed and latest versions:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/jeff-fischer-optimizely/optinugetchk/master/nugetchk.sh | bash -s -- --notes
+```
+
+To target a specific `.deps.json` (when a build ships several):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jeff-fischer-optimizely/optinugetchk/master/nugetchk.sh | bash -s -- --deps /home/site/wwwroot/MyApp.deps.json
 ```
 
 ---

@@ -16,3 +16,7 @@ jq
 
 # Test temp files
 test/test_write.txt
+.project-lock
+.pending-changes.yaml
+.merge-state.yaml
+/*.zip
